@@ -1,0 +1,81 @@
+{
+    "shared": {
+        "train_data": "assets/dataset/col5.hdf5",
+        "test_data": "assets/dataset/col6.hdf5",
+        "area_extents": [-48, 48, 0, 4, -48, 48],
+        "reference_loc": [0, 0, 0],
+        "hybrid_radius": 12,
+        "anchor_3d_sizes": [3.9, 1.56, 1.6],
+        "voxel_size": [0.4, 0.4, 0.4],
+        "number_T": 35,
+        "use_random_sampling": true,
+        "scales": [800],
+        "max_size": 1333,
+        "anchor_ratios": [0.5, 1, 2],
+        "anchor_stride": [0.8, 0.8],
+        "bbox_normalize_stats_precomputed": true,
+        "bbox_normalize_stds": [0.1, 0.1, 0.2, 0.2],
+        "bbox_normalize_means": [0, 0, 0, 0],
+        "roi_align": true,
+        "with_keypoint": false,
+        "with_mask": true,
+        "num_classes": 2,
+        "num_anchors": 2,
+        "class_names": [
+            "__background__",
+            "Car"
+        ],
+        "fix_layer_num": 1,
+        "allowed_border": 0,
+        "rpn_cls_activation": "sigmoid",
+        "use_ohem": false
+    },
+    "train": {
+      "save_dir": "assets/saved_models",
+      "epochs": 30,
+      "step_epochs": 10,
+      "lr": 0.01,
+      "momentum": 0.9,
+      "weight_decay": 0.0001,
+      "batch_size": 1,
+      "workers": 3,
+      "seed": 10
+    },
+    "train_anchor_target_cfg": {
+        "rpn_iou_type": "2d",
+        "rpn_batch_size": 256,
+        "nms_iou_thresh": 0.7,
+        "positive_iou_thresh": 0.6,
+        "negative_iou_thresh": 0.45,
+        "positive_percent": 0.5,
+        "ignore_iou_thresh": 0.5
+    },
+    "train_rpn_proposal_cfg": {
+        "nms_iou_thresh": 0.7,
+        "pre_nms_top_n": 2000,
+        "post_nms_top_n": 2000,
+        "roi_min_size": 0
+    },
+    "train_proposal_target_cfg": {
+        "batch_size": 512,
+        "positive_iou_thresh": 0.5,
+        "negative_iou_thresh_hi": 0.5,
+        "negative_iou_thresh_lo": 0.0,
+        "ignore_iou_thresh": 0.5,
+        "positive_percent": 0.25,
+        "append_gts": true
+    },
+     "test_rpn_proposal_cfg": {
+        "nms_iou_thresh": 0.3,
+        "pre_nms_top_n": 2000,
+        "post_nms_top_n": 300,
+        "roi_min_size": 0,
+        "score_threshold": 0.1
+    },
+    "test_predict_bbox_cfg": {
+        "nms_iou_thresh": 0.5,
+        "score_thresh": 0.00,
+        "top_n": 100
+
+    }
+}
