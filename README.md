@@ -41,9 +41,9 @@ sh build.sh
 
 ### Download Dataset and pretrained models
 
-1. Please download our cooperative dataset for infrastructure sensors [here](https://drive.google.com/file/d/1tlUelCVcMX9H2i60zrPdLS4yywa5gTmS/view?usp=sharing). Extract the contents in the `assets/dataset` folder.
+1. Please download our cooperative dataset for infrastructure sensors [here](https://wrap.warwick.ac.uk/159053/5/dataset.tar.xz). Extract the contents in the `assets/dataset` folder.
 
-2. If desired, download our pre-trained models for the T-junction and Roundabout scenarios [here](https://drive.google.com/file/d/1iVBYGxqSt8EmqmYveeag49cRZvC_r0Y4/view?usp=sharing). Extract the contents in the `assets/saved_models` folder.
+2. If desired, download our pre-trained models for the T-junction and Roundabout scenarios [here](https://wrap.warwick.ac.uk/159053/4/saved_models.tar.xz). Extract the contents in the `assets/saved_models` folder.
 
 ## :camera: Dataset details
 The dataset was created using the [CARLA](https://carla.org/) autonomous driving simulation tool.It contains colour and depth images of multiple cameras installed in a 'infrastructure' setting.
